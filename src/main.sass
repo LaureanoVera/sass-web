@@ -20,8 +20,8 @@ $unit: 8px
 @mixin btn($bg-color, $color, $bold)
   background-color: $bg-color
   color: $color
-  border-radius: 50px
-  padding: 2px 3px
+  border-radius: 10px
+  padding: 5px 10px
   text-align: center
   display: flex
   align-items: center
@@ -29,6 +29,15 @@ $unit: 8px
   @if($bold == 'true')
     font-weight: bolder
 
+.btn
+  &.btn-cta
+    @include btn($primary-color, $bg-color, 'true')
+    &:hover
+      @include btn($bg-color, $bg-color-2, 'true')
+      box-shadow: shadow
+  &:hover
+    @include btn($bg-color-2, $bg-color, 'true')
+    box-shadow: $shadow
 *
   @include reset-pm()
   box-sizing: border-box
@@ -65,5 +74,13 @@ ul
   gap: 20px
   li
     a 
-      @include btn($primary-color, $bg-color, 'true')
+      @include btn($bg-color-2, $bg-color, 'true')
+      box-shadow: $shadow
+      &:hover
+        @include btn($bg-color, $bg-color-2, 'true') 
 
+header
+  nav
+    display: flex
+    align-items: center
+    justify-content: space-between
