@@ -1,0 +1,11 @@
+@mixin btn($bg-color, $color, $bold)
+  background-color: $bg-color
+  color: $color
+  border-radius: 4px
+  padding: 5px 10px
+  text-align: center
+  display: flex
+  align-items: center
+  justify-content: space-around
+  @if($bold == 'true')
+    font-weight: bolder
